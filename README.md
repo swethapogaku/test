@@ -129,14 +129,24 @@ select * from t_platform_config;
 
 =================================================
 
+//create frontend_params
+CREATE TABLE t_network_members_params(
+    F_NETWORK_POOL_MEMBER_ID VARCHAR(10) NOT NULL,
+    f_key VARCHAR(100) NOT NULL,
+    f_value VARCHAR(100),
+    f_time DATE,
+    PRIMARY KEY (F_NETWORK_POOL_MEMBER_ID,f_key)
+);
+
+//insert 
+INSERT INTO t_network_members_params (F_NETWORK_POOL_MEMBER_ID, f_key, f_value, f_time) 
+VALUES 
+('nj', 'IS_MIGRATION_ALLOWED', 'TRUE', '2024-12-21 15:30:00'),
+('nj', 'MY_ACCOUNT_URL', 'https://myaccount.api.com', '2024-12-22 09:15:45');
 
 
-
-
-
-
-
-
+//fetch
+select * from t_network_members_params;
 
 
 =========================
