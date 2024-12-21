@@ -129,7 +129,7 @@ select * from t_platform_config;
 
 =================================================
 
-//create frontend_params
+//create frnt_params
 CREATE TABLE t_network_members_params(
     F_NETWORK_POOL_MEMBER_ID VARCHAR(10) NOT NULL,
     f_key VARCHAR(100) NOT NULL,
@@ -150,3 +150,27 @@ select * from t_network_members_params;
 
 
 =========================
+
+
+//create common_frnt_params
+
+CREATE TABLE t_common_network_members_params(
+    f_feature_name VARCHAR(100) NOT NULL,
+    f_key VARCHAR(100) NOT NULL,
+    f_value VARCHAR(100),
+    f_status TINYINT ,
+    f_time DATE,
+    PRIMARY KEY (f_feature_name,f_key)
+);
+
+//insert
+INSERT INTO t_common_network_members_params (f_feature_name, f_key, f_value, f_status,f_time) 
+VALUES 
+('CLIENT_URLS', 'DEFAULT_IP', 'spartonpoker.co.uk',1, '2024-12-21 15:30:00'),
+('CLIENT_URLS', 'PROMOTION_URLS', 'https://spartonpoker.promotions.com',1, '2024-12-21 15:30:00');
+
+
+//fetch
+select * from t_common_network_members_params;
+
+
