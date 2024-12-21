@@ -106,7 +106,28 @@ INSERT INTO T_NETWORK_CURRENCY VALUES (0,'USD','pp_ravindra','Y');
 SELECT * FROM T_NETWORK_CURRENCY WHERE F_NETWORK_POOL_ID = 0;
 
 
+==============================================================
 
+//create
+CREATE TABLE t_platform_config (
+    f_app_id TINYINT NOT NULL,
+    f_key VARCHAR(100) NOT NULL,
+    f_value VARCHAR(100),
+    f_time DATE,
+    PRIMARY KEY (f_key)
+);
+
+//insert 
+INSERT INTO t_platform_config (f_app_id, f_key, f_value, f_time) 
+VALUES 
+(1, 'ENABLE_DIAMOND_BALANCE', 'TRUE', '2024-12-21 15:30:00'),
+(2, 'US_FRONTENDS', 'nj,bj,mi,pv', '2024-12-22 09:15:45');
+
+
+//fetch
+select * from t_platform_config;
+
+=================================================
 
 
 
